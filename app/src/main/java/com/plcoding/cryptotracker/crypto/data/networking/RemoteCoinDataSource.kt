@@ -14,13 +14,17 @@ import io.ktor.client.request.get
 
 class RemoteCoinDataSource(
     private val httpClient: HttpClient
-): CoinDataSource {
+) : CoinDataSource {
     override suspend fun getCoins(): Result<List<Coin>, NetworkError> {
+        /*
+        Makes a network call using safeCall to fetch data as a ResponseCoinDto object.
+        Then maps the result data to a list of Coin objects using the .toCoin() extension function.
+         */
         return safeCall<ResponseCoinDto> {
             httpClient.get(
                 urlString = constructUrl("/assets")
             )
-        }.map { responseCoinDto ->  
+        }.map { responseCoinDto ->
             responseCoinDto.data.map { it.toCoin() }
         }
     }
