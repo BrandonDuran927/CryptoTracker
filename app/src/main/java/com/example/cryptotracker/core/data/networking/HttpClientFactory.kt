@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.core.data.networking
+package com.example.cryptotracker.core.data.networking
 
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.HttpClientEngine

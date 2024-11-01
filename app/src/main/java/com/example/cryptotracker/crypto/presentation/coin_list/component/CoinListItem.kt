@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.sp
 import com.plcoding.cryptotracker.crypto.domain.Coin
 import com.plcoding.cryptotracker.crypto.presentation.models.CoinUi
 import com.plcoding.cryptotracker.crypto.presentation.models.toCoinUi
-import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
+import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
 
 
 // COMPONENT - consists of different composable

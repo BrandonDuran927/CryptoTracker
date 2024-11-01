@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.data.networking
+package com.example.cryptotracker.crypto.data.networking
 
 import com.plcoding.cryptotracker.core.data.networking.constructUrl
 import com.plcoding.cryptotracker.core.data.networking.safeCall
@@ -8,7 +8,7 @@ import com.plcoding.cryptotracker.core.domain.util.map
 import com.plcoding.cryptotracker.crypto.data.mappers.toCoin
 import com.plcoding.cryptotracker.crypto.data.networking.dto.ResponseCoinDto
 import com.plcoding.cryptotracker.crypto.domain.Coin
-import com.plcoding.cryptotracker.crypto.domain.CoinDataSource
+import com.example.cryptotracker.crypto.domain.CoinDataSource
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 
