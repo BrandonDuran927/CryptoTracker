@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker
+package com.example.cryptotracker
 
 import android.app.Application
 import com.plcoding.cryptotracker.di.appModule
