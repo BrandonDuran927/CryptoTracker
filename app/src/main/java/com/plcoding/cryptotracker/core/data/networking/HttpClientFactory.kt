@@ -12,7 +12,6 @@ import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
-import java.util.logging.Level
 
 object HttpClientFactory {
     fun create(engine: HttpClientEngine): HttpClient {

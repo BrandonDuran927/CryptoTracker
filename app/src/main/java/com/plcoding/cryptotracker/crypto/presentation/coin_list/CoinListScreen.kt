@@ -20,7 +20,7 @@ import com.plcoding.cryptotracker.crypto.presentation.coin_list.component.previe
 import com.plcoding.cryptotracker.ui.theme.CryptoTrackerTheme
 
 
-//Coin List Screen - TIP: Do not pass the viewModel into the composable since the preview will not render
+// Coin List Screen - TIP: Do not pass the viewModel into the composable since the preview will not render
 @Composable
 fun CoinListScreen(
     state: CoinListStateUi,
