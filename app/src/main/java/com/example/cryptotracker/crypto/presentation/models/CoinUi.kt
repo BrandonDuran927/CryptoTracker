@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.models
+package com.example.cryptotracker.crypto.presentation.models
 
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes

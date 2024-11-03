@@ -36,7 +36,7 @@ import com.example.cryptotracker.crypto.presentation.coin_list.CoinListStateUi
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
 import com.plcoding.cryptotracker.R
 import com.plcoding.cryptotracker.crypto.presentation.coin_list.component.previewCoin
-import com.plcoding.cryptotracker.crypto.presentation.models.toDisplayableDouble
+import com.example.cryptotracker.crypto.presentation.models.toDisplayableDouble
 import com.plcoding.cryptotracker.ui.theme.greenBackground
 
 @Composable

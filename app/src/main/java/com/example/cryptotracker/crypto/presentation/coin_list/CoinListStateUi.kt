@@ -1,7 +1,7 @@
 package com.example.cryptotracker.crypto.presentation.coin_list
 
 import androidx.compose.runtime.Immutable
-import com.plcoding.cryptotracker.crypto.presentation.models.CoinUi
+import com.example.cryptotracker.crypto.presentation.models.CoinUi
 
 
 // MVI APPROACH
