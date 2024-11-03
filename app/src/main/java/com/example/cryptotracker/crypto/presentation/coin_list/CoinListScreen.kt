@@ -26,7 +26,6 @@ fun CoinListScreen(
     state: CoinListStateUi,
     modifier: Modifier = Modifier
 ) {
-
     if (state.isLoading) {
         Box(
             modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center
