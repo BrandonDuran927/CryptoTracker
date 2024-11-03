@@ -1,6 +1,6 @@
-package com.plcoding.cryptotracker.core.data.networking
+package com.example.cryptotracker.core.data.networking
 
-import com.plcoding.cryptotracker.core.domain.util.Result
+import com.example.cryptotracker.core.domain.util.Result
 import com.plcoding.cryptotracker.core.domain.util.NetworkError
 import io.ktor.client.statement.HttpResponse
 import io.ktor.util.network.UnresolvedAddressException

@@ -1,10 +1,10 @@
 package com.example.cryptotracker.crypto.data.networking
 
 import com.plcoding.cryptotracker.core.data.networking.constructUrl
-import com.plcoding.cryptotracker.core.data.networking.safeCall
+import com.example.cryptotracker.core.data.networking.safeCall
 import com.plcoding.cryptotracker.core.domain.util.NetworkError
-import com.plcoding.cryptotracker.core.domain.util.Result
-import com.plcoding.cryptotracker.core.domain.util.map
+import com.example.cryptotracker.core.domain.util.Result
+import com.example.cryptotracker.core.domain.util.map
 import com.example.cryptotracker.crypto.data.mappers.toCoin
 import com.example.cryptotracker.crypto.data.mappers.toCoinPrice
 import com.example.cryptotracker.crypto.data.networking.dto.CoinResponseDto
@@ -58,7 +58,7 @@ class RemoteCoinDataSource(
                 parameter("end", endMillis)
             }
         }.map { response ->
-            response.data.map { coinPrice -> coinPrice.toCoinPrice() }
+            response.data.map { coinPriceDto -> coinPriceDto.toCoinPrice() }
         }
     }
 }
