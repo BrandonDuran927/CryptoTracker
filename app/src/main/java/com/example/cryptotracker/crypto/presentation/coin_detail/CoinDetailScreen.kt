@@ -68,7 +68,7 @@ fun CoinDetailScreen(
             Icon(
                 imageVector = ImageVector.vectorResource(coin.iconRes),
                 contentDescription = "Coin selected",
-                modifier = modifier.size(100.dp),
+                modifier = Modifier.size(100.dp),
                 tint = MaterialTheme.colorScheme.primary
             )
             Text(
