@@ -1,4 +1,4 @@
-package com.plcoding.cryptotracker.crypto.presentation.coin_list
+package com.example.cryptotracker.crypto.presentation.coin_list
 
 import com.plcoding.cryptotracker.crypto.presentation.models.CoinUi
 

@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.plcoding.cryptotracker.core.domain.util.onError
 import com.plcoding.cryptotracker.core.domain.util.onSuccess
 import com.example.cryptotracker.crypto.domain.CoinDataSource
-import com.plcoding.cryptotracker.crypto.presentation.coin_list.CoinListAction
 import com.plcoding.cryptotracker.crypto.presentation.models.toCoinUi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -34,7 +33,9 @@ class CoinListViewModel(
     fun onAction(coinListAction: CoinListAction) {
         when(coinListAction) {
             is CoinListAction.OnClickCoin -> {
-
+                _state.update {
+                    it.copy(selectedCoin = coinListAction.coinUi)
+                }
             }
         }
     }
