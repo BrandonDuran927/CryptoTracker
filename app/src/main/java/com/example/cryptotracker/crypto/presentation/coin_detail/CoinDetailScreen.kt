@@ -11,8 +11,10 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
@@ -31,6 +33,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.cryptotracker.crypto.domain.CoinPrice
 import com.example.cryptotracker.crypto.presentation.coin_detail.components.InfoCard
 import com.example.cryptotracker.crypto.presentation.coin_list.CoinListStateUi
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
@@ -38,6 +41,9 @@ import com.plcoding.cryptotracker.R
 import com.plcoding.cryptotracker.crypto.presentation.coin_list.component.previewCoin
 import com.example.cryptotracker.crypto.presentation.models.toDisplayableDouble
 import com.plcoding.cryptotracker.ui.theme.greenBackground
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import kotlin.random.Random
 
 @Composable
 fun CoinDetailScreen(
@@ -119,9 +125,53 @@ fun CoinDetailScreen(
                     contentColor = changeLast24hContentColor
                 )
             }
+            LineChart(
+                dataPoints = dataPoints,
+                style = style,
+                visibleDataPointsIndices = 0..19,
+                unit = "$",
+                modifier = Modifier
+                    .width(700.dp)
+                    .height(300.dp)
+                    .background(Color.White),
+                selectedDataPoint = dataPoints[3]
+            )
         }
     }
 }
+
+internal val coinHistoryRandomized =
+    (1..20).map {
+        CoinPrice(
+            priceUsd = Random.nextFloat() * 1000.0,
+            dateTime = ZonedDateTime.now().plusHours(it.toLong())
+        )
+    }
+
+
+internal val style = ChartStyle(
+    chartLineColor = Color.Black,
+    unselectedColor = Color(0xFF7C7C7C),
+    selectedColor = Color.Black,
+    helperLinesThicknessPx = 1f,
+    axisLinesThicknessPx = 5f,
+    labelFontSize = 14.sp,
+    minYLabelSpacing = 25.dp,
+    verticalPadding = 8.dp,
+    horizontalPadding = 8.dp,
+    xAxisLabelSpacing = 8.dp
+)
+
+internal val dataPoints =
+    coinHistoryRandomized.map {
+        DataPoint(
+            x = it.dateTime.hour.toFloat(),
+            y = it.priceUsd.toFloat(),
+            xLabel = DateTimeFormatter
+                .ofPattern("ha\nM/d")
+                .format(it.dateTime)
+        )
+    }
 
 @PreviewLightDark
 @Composable
