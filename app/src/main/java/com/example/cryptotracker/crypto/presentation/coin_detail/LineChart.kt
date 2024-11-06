@@ -1,5 +1,6 @@
 package com.example.cryptotracker.crypto.presentation.coin_detail
 
+import android.util.Log
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
@@ -148,18 +149,6 @@ fun LineChart(
         val viewPortRightX = size.width
         val viewPortBottomY = viewPortTopY + viewPortHeightPx
         val viewPortLeftX = 2f * horizontalPaddingPx + maxLabelWidth
-        val viewPort = Rect(
-            left = viewPortLeftX,
-            top = viewPortTopY,
-            right = viewPortRightX,
-            bottom = viewPortBottomY
-        )
-
-        drawRect(
-            color = Color.Green.copy(alpha = 0.3f),
-            topLeft = viewPort.topLeft,
-            size = viewPort.size
-        )
 
         xLabelWidth = maxXLabelWidth + xAxisLabelSpacingPx
         xLabelTextLayoutResults.forEachIndexed { index, result ->
@@ -294,28 +283,6 @@ fun LineChart(
                 moveTo(drawPoints.first().x, drawPoints.first().y)
 
                 for (i in 1 until drawPoints.size) {
-                    val tmpCircle1Offset = Offset(
-                        x = conPoints1[i-1].x,
-                        y = conPoints1[i-1].y
-                    )
-
-                    val tmpCircle2Offset = Offset(
-                        x = conPoints2[i-1].x,
-                        y = conPoints2[i-1].y
-                    )
-
-                    drawCircle(
-                        color = Color.Red,
-                        radius = 10f,
-                        center = tmpCircle1Offset
-                    )
-
-                    drawCircle(
-                        color = Color.Red,
-                        radius = 10f,
-                        center = tmpCircle2Offset
-                    )
-
                     cubicTo(
                         x1 = conPoints1[i - 1].x,
                         y1 = conPoints1[i - 1].y,
@@ -378,6 +345,7 @@ private fun getSelectedDataPointIndex(
     val triggerRangeLeft = touchOffset - (triggerWidth / 2f)
     val triggerRangeRight = touchOffset + (triggerWidth / 2f)
     return drawPoints.indexOfFirst {
+
         it.x in triggerRangeLeft..triggerRangeRight
     }
 }
