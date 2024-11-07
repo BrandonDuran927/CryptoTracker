@@ -119,7 +119,8 @@ fun LineChart(
         val maxXLabelWidth = xLabelTextLayoutResults.maxOfOrNull { it.size.width } ?: 0
         val maxXLabelHeight = xLabelTextLayoutResults.maxOfOrNull { it.size.height } ?: 0
         val maxXLabelLineCount = xLabelTextLayoutResults.maxOfOrNull { it.lineCount } ?: 0
-        val xLabelLineHeight = maxXLabelHeight / maxXLabelLineCount
+        val xLabelLineHeight =
+            if (maxXLabelHeight > 0 && maxXLabelLineCount > 0) maxXLabelHeight / maxXLabelLineCount else 0
 
         val viewPortHeightPx = size.height -
                 (maxXLabelHeight + (2 * verticalPaddingPx) + xLabelLineHeight + xAxisLabelSpacingPx)
@@ -251,7 +252,7 @@ fun LineChart(
         }
         // visibleDataPointsIndices = 5..20
         drawPoints = visibleDataPointsIndices.map { index ->
-            val x =  ((index - visibleDataPointsIndices.first) * xLabelWidth) +
+            val x = ((index - visibleDataPointsIndices.first) * xLabelWidth) +
                     (xLabelWidth / 2f) + viewPortLeftX
             // [minYValue; maxYValue] -> [0; 1]
             // [0.00; 1000.00]
