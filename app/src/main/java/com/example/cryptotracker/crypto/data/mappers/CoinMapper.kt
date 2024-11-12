@@ -3,7 +3,7 @@ package com.example.cryptotracker.crypto.data.mappers
 import com.example.cryptotracker.crypto.data.networking.dto.CoinPriceDto
 import com.example.cryptotracker.crypto.domain.CoinPrice
 import com.plcoding.cryptotracker.crypto.data.networking.dto.CoinDto
-import com.plcoding.cryptotracker.crypto.domain.Coin
+import com.example.cryptotracker.crypto.domain.Coin
 import java.time.Instant
 import java.time.ZoneId
 

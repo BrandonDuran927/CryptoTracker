@@ -78,7 +78,7 @@ fun LineChart(
     val selectedDataPointIndex = remember(selectedDataPoint) {
         dataPoints.indexOf(selectedDataPoint)
     }
-    var drawPoints by remember {
+        var drawPoints by remember {
         mutableStateOf(listOf<DataPoint>())
     }
     var isShowingDataPoints by remember {

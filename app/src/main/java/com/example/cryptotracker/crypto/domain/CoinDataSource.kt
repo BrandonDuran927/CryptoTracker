@@ -2,7 +2,6 @@ package com.example.cryptotracker.crypto.domain
 
 import com.plcoding.cryptotracker.core.domain.util.NetworkError
 import com.example.cryptotracker.core.domain.util.Result
-import com.plcoding.cryptotracker.crypto.domain.Coin
 import java.time.ZonedDateTime
 
 interface CoinDataSource {

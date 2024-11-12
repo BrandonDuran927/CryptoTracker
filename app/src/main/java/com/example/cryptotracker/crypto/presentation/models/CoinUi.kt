@@ -3,7 +3,7 @@ package com.example.cryptotracker.crypto.presentation.models
 import android.icu.text.NumberFormat
 import androidx.annotation.DrawableRes
 import com.example.cryptotracker.crypto.presentation.coin_detail.DataPoint
-import com.plcoding.cryptotracker.crypto.domain.Coin
+import com.example.cryptotracker.crypto.domain.Coin
 import com.plcoding.cryptotracker.core.presentation.util.getDrawableIdForCoin
 import java.util.Locale
 

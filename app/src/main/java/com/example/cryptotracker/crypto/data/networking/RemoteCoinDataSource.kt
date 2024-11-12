@@ -9,7 +9,7 @@ import com.example.cryptotracker.crypto.data.mappers.toCoin
 import com.example.cryptotracker.crypto.data.mappers.toCoinPrice
 import com.example.cryptotracker.crypto.data.networking.dto.CoinResponseDto
 import com.example.cryptotracker.crypto.data.networking.dto.CoinHistoryDto
-import com.plcoding.cryptotracker.crypto.domain.Coin
+import com.example.cryptotracker.crypto.domain.Coin
 import com.example.cryptotracker.crypto.domain.CoinDataSource
 import com.example.cryptotracker.crypto.domain.CoinPrice
 import io.ktor.client.HttpClient
